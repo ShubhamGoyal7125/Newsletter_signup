@@ -3,7 +3,7 @@
 const express = require("express");
 const app = express();
 const mailchimp = require("@mailchimp/mailchimp_marketing");
-const https = require("https");
+/* const https = require("https"); */
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
@@ -88,11 +88,11 @@ app.post("/", function (req, res) {
 
 app.post("/failure", function (req, res) {
     res.redirect("/");
-})
+});
 
 app.listen(process.env.PORT || 3000, function (req, res) { // process.env.PORT is defined by heroku
     console.log("Server running at port: 3000");
-})
+});
 
 
 // 1434c3748a539f6c7bb55bc1b3eb4eb9-us5
